@@ -48,6 +48,21 @@ namespace DMS.Controllers
             ViewBag.Message = "Your application description page.";
             return View();
         }
+        public ActionResult gallery()
+        {
+            ViewBag.Message = "Your gallery page.";
+            return View();
+        }
+        public ActionResult icons()
+        {
+            ViewBag.Message = "Your icons page.";
+            return View();
+        }
+        public ActionResult typography()
+        {
+            ViewBag.Message = "Your typography page.";
+            return View();
+        }
 
         public ActionResult Contact()
         {
