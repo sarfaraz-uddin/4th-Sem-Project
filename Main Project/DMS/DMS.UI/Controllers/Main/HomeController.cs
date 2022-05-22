@@ -72,7 +72,7 @@ namespace DMS.Controllers
 
         public async Task<ActionResult>Dashboard()
         {
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","admin");
         }
 
     }
