@@ -302,6 +302,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\UserManagement.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Main\AdddestinationController.cs" />
     <Compile Include="Controllers\Main\adminController.cs" />
     <Compile Include="Controllers\Main\AccountController.cs" />
     <Compile Include="Controllers\Base\BaseControllerV1Controller.cs" />
@@ -1486,6 +1487,9 @@
     <Content Include="Views\Home\typography.cshtml" />
     <Content Include="Views\Shared\adminlayout.cshtml" />
     <Content Include="Views\admin\index.cshtml" />
+    <Content Include="Views\Adddestination\index.cshtml" />
+    <Content Include="Views\Adddestination\items.cshtml" />
+    <Content Include="Views\Adddestination\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
