@@ -1,32 +1,34 @@
-﻿
+﻿@model List<DMS.DAL.DatabaseContext.destination>
 @{
     ViewBag.Title = "index";
     int id = 0;
 }
+<div class="row form-group" style="margin-top:150px;">
+    <h2>Index</h2>
+    <a href="@Url.Action("items","Adddestination")">Add a new record</a>
 
-<h2>Index</h2>
-<a href="@Url.Action("items")">Add a new record</a>
-
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Time</th>
-        <th>Description</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    @foreach(var data in Model)
-            {
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Time</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        @foreach (var data in Model)
+        {
             <tr>
                 <td>@(++id)</td>
                 <td>@(data.dname)</td>
                 <td>@(data.dtime)</td>
+                <td>@(data.location)</td>
                 <td>@(data.description)</td>
-                <td><a href="@Url.Action("edit",new {id = data.eid})">Edit</a></td>
-                <td><a href="@Url.Action("deletedata",new {e_id = data.eid})">Delete</a></td>
+                <td>@(data.photo)</td>
+                @*<td><a href="@Url.Action("edit",new {id = data.id})">Edit</a></td>
+                    <td><a href="@Url.Action("deletedata",new {e_id = data.eid})">Delete</a></td>*@
             </tr>
-            }
-</table>
+        }
+    </table>
 
-
+</div>
