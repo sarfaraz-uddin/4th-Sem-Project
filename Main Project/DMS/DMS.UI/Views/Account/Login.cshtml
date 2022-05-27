@@ -5,6 +5,14 @@
                 ViewBag.Title = "Login";
                 Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
+<style>
+    .login {
+        background-image: url('../../Content/assets/images/nature.jpg');
+        background-repeat: no-repeat;
+        /*background-position: center;*/
+        background-size: 100%;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
@@ -17,7 +25,7 @@
             <div class="row padBox">
                 <div class="col-sm-6">
                     <div class="thumbnail">
-                        <img width="200px" src="@Url.Content("~/" + ViewHelper.TenantFile("Content/Images/logo.jpg"))" class="img-responsive" />
+                        <img width="200px" src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/WOPA160517_D056-resized.jpg?crop=864%2C0%2C1728%2C2304&wid=600&hei=800&scl=2.88" class="img-responsive" />
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -61,7 +69,7 @@
                         </form>
                         <!-- start: COPYRIGHT -->
                         <div class="copyright" style="color:black;">
-                            Copyright &copy; @DateTime.Now.Year @(ViewHelper.LoginCompanyName). All rights reserved.
+                            Copyright &copy; @DateTime.Now.Year Sarfaraz. All rights reserved.
                         </div>
                         <!-- end: COPYRIGHT -->
                     </div>

@@ -1,6 +1,7 @@
 ﻿using DMS.DAL.DatabaseContext;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,26 @@ namespace DMS.Controllers.Main
         public ActionResult Savedata(destination destination)
         {
             db.destinations.Add(destination);
+            db.SaveChanges();
+            return RedirectToAction("index");
+        }
+        public ActionResult edit(int id)
+        {
+            destination destination = db.destinations.Find(id);
+            //employee data=db.employees.firstordefault(x=>x.id==id);
+            return View(destination);
+        }
+        public ActionResult Updatedata(destination destination)
+        {
+
+            db.Entry(destination).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("index");
+        }
+        public ActionResult deletedata(int id)
+        {
+            destination data = db.destinations.Find(id);
+            db.destinations.Remove(data);
             db.SaveChanges();
             return RedirectToAction("index");
         }

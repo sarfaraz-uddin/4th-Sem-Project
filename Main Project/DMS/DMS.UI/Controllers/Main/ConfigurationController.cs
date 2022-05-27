@@ -30,29 +30,21 @@ namespace DMS.Controllers
         // GET: Configuration
         public ActionResult Index()
         {
-            if (_ActiveSession.IsOrgAdmin)
-            {
-                IList<cfg01configurations> cfg01configurations = db.cfg01configurations.ToList();
-                return View(cfg01configurations);
-            }
-            return RedirectToAction("Index", "Home");
+            IList<cfg01configurations> cfg01configurations = db.cfg01configurations.ToList();
+            return View(cfg01configurations);
         }
 
         public ActionResult Edit()
         {
-            if (_ActiveSession.IsOrgAdmin)
-            {
-                VMEditSettings data = new VMEditSettings();
-                data.SMTPServer = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPServer);
-                data.SMTPUser = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPUser);
-                data.SMTPPassword = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPPassword);
-                data.SMTPPort = _ConfigRepo.GetInt(enumConfigSettingsKeys.SMTPPort);
-                data.SMTPSSL = _ConfigRepo.GetBool(enumConfigSettingsKeys.SMTPSSL);
-                data.SMTPFrom = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPFrom);
-                data.EmailNotification = _ConfigRepo.GetBool(enumConfigSettingsKeys.EmailNotification);
-                return View(data);
-            }
-            return RedirectToAction("Index", "Home");
+            VMEditSettings data = new VMEditSettings();
+            data.SMTPServer = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPServer);
+            data.SMTPUser = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPUser);
+            data.SMTPPassword = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPPassword);
+            data.SMTPPort = _ConfigRepo.GetInt(enumConfigSettingsKeys.SMTPPort);
+            data.SMTPSSL = _ConfigRepo.GetBool(enumConfigSettingsKeys.SMTPSSL);
+            data.SMTPFrom = _ConfigRepo.GetString(enumConfigSettingsKeys.SMTPFrom);
+            data.EmailNotification = _ConfigRepo.GetBool(enumConfigSettingsKeys.EmailNotification);
+            return View(data);
         }
 
         [HttpPost]
