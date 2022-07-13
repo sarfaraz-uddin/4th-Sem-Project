@@ -69,6 +69,11 @@ namespace DMS.Controllers
             ViewBag.Message = "Your contact page.";
             return View();
         }
+        public ActionResult beautifultours()
+        {
+            ViewBag.Message = "Your tours page.";
+            return View();
+        }
 
         public async Task<ActionResult>Dashboard()
         {

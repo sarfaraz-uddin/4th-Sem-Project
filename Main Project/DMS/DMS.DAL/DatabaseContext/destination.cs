@@ -14,11 +14,14 @@ namespace DMS.DAL.DatabaseContext
     
     public partial class destination
     {
+      
+
         public int id { get; set; }
         public string dname { get; set; }
         public string dtime { get; set; }
         public string location { get; set; }
         public string description { get; set; }
         public string photo { get; set; }
+        public string photo_name { get; set; }
     }
 }

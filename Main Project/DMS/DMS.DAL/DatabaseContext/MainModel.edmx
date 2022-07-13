@@ -81,6 +81,7 @@
           <Property Name="location" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="photo" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="photo_name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="emp01employee">
           <Key>
@@ -106,6 +107,14 @@
           <Property Name="emp01updated_by" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="emp01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="emp01update_date_eng" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo_path" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="destination_name" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="lvl01employee_levels">
           <Key>
@@ -232,6 +241,7 @@
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="destination" EntityType="Self.destination" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gallery" EntityType="Self.gallery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCodes" EntityType="Self.UserCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usr05users" EntityType="Self.usr05users" Schema="dbo" store:Type="Tables" />
@@ -298,6 +308,7 @@
             <End Role="usr05users" EntitySet="usr05users" />
           </AssociationSet>
           <EntitySet Name="destinations" EntityType="BIT4thSemModel.destination" />
+          <EntitySet Name="galleries" EntityType="BIT4thSemModel.gallery" />
         </EntityContainer>
         <EntityType Name="bra01branches">
           <Key>
@@ -530,6 +541,15 @@
           <Property Name="location" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="photo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="photo_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo_path" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="destination_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -684,11 +704,21 @@
           <EntitySetMapping Name="destinations">
             <EntityTypeMapping TypeName="BIT4thSemModel.destination">
               <MappingFragment StoreEntitySet="destination">
+                <ScalarProperty Name="photo_name" ColumnName="photo_name" />
                 <ScalarProperty Name="photo" ColumnName="photo" />
                 <ScalarProperty Name="description" ColumnName="description" />
                 <ScalarProperty Name="location" ColumnName="location" />
                 <ScalarProperty Name="dtime" ColumnName="dtime" />
                 <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="galleries">
+            <EntityTypeMapping TypeName="BIT4thSemModel.gallery">
+              <MappingFragment StoreEntitySet="gallery">
+                <ScalarProperty Name="destination_name" ColumnName="destination_name" />
+                <ScalarProperty Name="photo_path" ColumnName="photo_path" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -13,7 +13,8 @@ namespace DMS.DAL.Migrations
                 dtime nvarchar(255) NOT NULL,
                 location nvarchar(255) NOT NULL,
                 description nvarchar(255) NOT NULL,
-                photo nvarchar(255) NOT NULL
+                photo nvarchar(255) NOT NULL,
+                photo_name nvarchar(255) NOT NULL
             )");
         }
         

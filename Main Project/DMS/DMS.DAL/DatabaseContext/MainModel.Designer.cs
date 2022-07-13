@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Practise Session\4th sem project\Main Project Template\Main Project\DMS\DMS.DAL\DatabaseContext\MainModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Dell\Desktop\4th sem project\4th-Sem-Project\Main Project\DMS\DMS.DAL\DatabaseContext\MainModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -1,36 +1,50 @@
 ﻿
 @{
+    Layout = "~/Views/Shared/adminlayout.cshtml";
     ViewBag.Title = "items";
 }
 
-<h2>items</h2>
-<form action="SaveData">
-    <label class="col-md-2">Name</label><br />
-    <div class="col-md-4"> 
+<h2 style="margin-top:75px">items</h2>
+<form action="SaveData" style="margin-top:85px">
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
         <input type="text" name="dname" class="form-control" />
-    </div>
+    </div><br />
 
-    <label class="col-md-2">Time</label><br />
+    <label class="col-md-2">Time</label>
     <div class="col-md-4">
         <input type="text" name="dtime" class="form-control" />
-    </div>
+    </div><br />
 
-    <label class="col-md-2">Location</label><br />
+    <label class="col-md-2">Location</label>
     <div class="col-md-4">
         <input type="text" name="location" class="form-control" />
     </div><br />
-    
-    <label class="col-md-2">Description</label><br />
+
+    <label class="col-md-2">Description</label>
     <div class="col-md-4">
         <input type="text" name="description" class="form-control" />
-    </div><br />
-    
-    <label class="col-md-2">Photo</label><br />
-    <div class="col-md-4">
-        <input type="text" name="photo" class="form-control" />
     </div><br />
 
     <div class="col-md-2">
         <input type="Submit" class="btn btn-success" value="Save" />
     </div>
+
+    <br />
+
 </form>
+<form>
+@using (Html.BeginForm("SaveImage", "destination", FormMethod.Post, new { @class = "", @enctype = "multipart/form-data" }))
+{
+    <div class="row-fom-group">
+        <label class="col-md-2">Photo</label>
+        <div class="col-md-4">
+            <input type="file" name="photo" class="form-control" />
+        </div>
+    </div><br />
+    <div class="col-md-2">
+        <input type="Submit" class="btn btn-success" value="Save" />
+    </div>
+}
+</form>
+

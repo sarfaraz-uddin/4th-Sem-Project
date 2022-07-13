@@ -309,6 +309,7 @@
     <Compile Include="Controllers\Base\_BaseAuthenticatedController.cs" />
     <Compile Include="Controllers\Base\BaseController.cs" />
     <Compile Include="Controllers\Main\ConfigurationController.cs" />
+    <Compile Include="Controllers\Main\GalleryController.cs" />
     <Compile Include="Controllers\Main\JavaScriptController.cs" />
     <Compile Include="Controllers\Main\RolePermissionController.cs" />
     <Compile Include="Controllers\ErrorLog\GlobalErrorLogController.cs" />
@@ -1491,6 +1492,9 @@
     <Content Include="Views\Adddestination\index.cshtml" />
     <Content Include="Views\Adddestination\items.cshtml" />
     <Content Include="Views\Adddestination\Edit.cshtml" />
+    <Content Include="Views\Home\beautifultours.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\AddNew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
