@@ -108,6 +108,15 @@
           <Property Name="emp01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="emp01update_date_eng" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="employee_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="address" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="contact" Type="nchar" MaxLength="15" Nullable="false" />
+        </EntityType>
         <EntityType Name="gallery">
           <Key>
             <PropertyRef Name="id" />
@@ -132,6 +141,15 @@
           <Property Name="lvl01updated_by" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="lvl01updated_date_nep" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="lvl01updated_date_eng" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contact" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="UserCodes">
           <Key>
@@ -241,8 +259,10 @@
           <EntitySet Name="des01designations" EntityType="Self.des01designations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="destination" EntityType="Self.destination" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="emp01employee" EntityType="Self.emp01employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="employee_data" EntityType="Self.employee_data" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="gallery" EntityType="Self.gallery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lvl01employee_levels" EntityType="Self.lvl01employee_levels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="test" EntityType="Self.test" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserCodes" EntityType="Self.UserCodes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usr05users" EntityType="Self.usr05users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_emp01employee_bra01branches" Association="Self.FK_emp01employee_bra01branches">
@@ -280,7 +300,9 @@
           <EntitySet Name="dep01department" EntityType="BIT4thSemModel.dep01department" />
           <EntitySet Name="des01designations" EntityType="BIT4thSemModel.des01designations" />
           <EntitySet Name="emp01employee" EntityType="BIT4thSemModel.emp01employee" />
+          <EntitySet Name="employee_data" EntityType="BIT4thSemModel.employee_data" />
           <EntitySet Name="lvl01employee_levels" EntityType="BIT4thSemModel.lvl01employee_levels" />
+          <EntitySet Name="tests" EntityType="BIT4thSemModel.test" />
           <EntitySet Name="UserCodes" EntityType="BIT4thSemModel.UserCode" />
           <EntitySet Name="usr05users" EntityType="BIT4thSemModel.usr05users" />
           <AssociationSet Name="FK_emp01employee_bra01branches" Association="BIT4thSemModel.FK_emp01employee_bra01branches">
@@ -410,6 +432,15 @@
           <NavigationProperty Name="lvl01employee_levels" Relationship="BIT4thSemModel.FK_emp01employee_lvl01employee_levels" FromRole="emp01employee" ToRole="lvl01employee_levels" />
           <NavigationProperty Name="usr05users" Relationship="BIT4thSemModel.FK_usr05users_emp01employee" FromRole="emp01employee" ToRole="usr05users" />
         </EntityType>
+        <EntityType Name="employee_data">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="contact" Type="String" Nullable="false" MaxLength="15" FixedLength="true" Unicode="true" />
+        </EntityType>
         <EntityType Name="lvl01employee_levels">
           <Key>
             <PropertyRef Name="lvl01uin" />
@@ -427,6 +458,15 @@
           <Property Name="lvl01updated_date_nep" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="lvl01updated_date_eng" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="emp01employee" Relationship="BIT4thSemModel.FK_emp01employee_lvl01employee_levels" FromRole="lvl01employee_levels" ToRole="emp01employee" />
+        </EntityType>
+        <EntityType Name="test">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="contact" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="UserCode">
           <Key>
@@ -652,6 +692,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="employee_data">
+            <EntityTypeMapping TypeName="BIT4thSemModel.employee_data">
+              <MappingFragment StoreEntitySet="employee_data">
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="lvl01employee_levels">
             <EntityTypeMapping TypeName="BIT4thSemModel.lvl01employee_levels">
               <MappingFragment StoreEntitySet="lvl01employee_levels">
@@ -667,6 +717,16 @@
                 <ScalarProperty Name="lvl01description" ColumnName="lvl01description" />
                 <ScalarProperty Name="lvl01title" ColumnName="lvl01title" />
                 <ScalarProperty Name="lvl01uin" ColumnName="lvl01uin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tests">
+            <EntityTypeMapping TypeName="BIT4thSemModel.test">
+              <MappingFragment StoreEntitySet="test">
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

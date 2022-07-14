@@ -1,6 +1,7 @@
 ﻿using DMS.DAL.DatabaseContext;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,11 +10,11 @@ namespace DMS.Controllers.Main
 {
     public class GalleryController : Controller
     {
-        MainEntities db = new MainEntities(); 
+        MainEntities db = new MainEntities();
         // GET: Gallery
         public ActionResult Index()
         {
-            List<gallery> data = db.galleries.tolist();
+            List<gallery> data = db.galleries.ToList();
             return View(data);
         }
 
@@ -33,12 +34,12 @@ namespace DMS.Controllers.Main
             }
             SelectedFile.SaveAs(new_path);
             gallery gallery = new gallery();
-            gallery.photo_path = "~/ Uploads"; 
+            gallery.photo_path = "~/ Uploads";
             gallery.destination_name = filename;
             db.galleries.Add(gallery);
             db.SaveChanges();
 
-            
+
             return RedirectToAction("Index");
         }
     }

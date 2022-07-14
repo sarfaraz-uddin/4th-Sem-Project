@@ -134,7 +134,7 @@
                             <td>@(data.location)</td>
                             <td>@(data.description)</td>
                             <td>
-                                <img src="@(data.photo+"/"+data.photo_name)" height="200" width="200" />
+                                <img src="@Url.Content(data.photo+"/"+data.photo_name)" height="200" width="200" />
                             </td>
                             <td><a href="@Url.Action("edit",new {id = data.id})">Edit</a></td>
                             <td><a href="@Url.Action("deletedata",new {id = data.id})">Delete</a></td>

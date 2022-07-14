@@ -12,14 +12,10 @@ namespace DMS.DAL.DatabaseContext
     using System;
     using System.Collections.Generic;
     
-    public partial class destination
+    public partial class gallery
     {
         public int id { get; set; }
-        public string dname { get; set; }
-        public string dtime { get; set; }
-        public string location { get; set; }
-        public string description { get; set; }
-        public string photo { get; set; }
-        public string photo_name { get; set; }
+        public string photo_path { get; set; }
+        public string destination_name { get; set; }
     }
 }

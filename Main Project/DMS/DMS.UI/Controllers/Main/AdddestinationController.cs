@@ -22,10 +22,17 @@ namespace DMS.Controllers.Main
 
         public ActionResult items()
         {
-             List<destination> all_data = db.destinations.ToList();
+            List<destination> all_data = db.destinations.ToList();
             return View(all_data);
         }
-        public ActionResult SaveImage(HttpPostedFileBase photo)
+
+
+        public ActionResult create()
+        {
+
+            return View();
+        }
+        public ActionResult Savedata(destination destination, HttpPostedFileBase photo)
         {
             string path = Server.MapPath("~/Uploads");
             string filename = photo.FileName;
@@ -35,24 +42,8 @@ namespace DMS.Controllers.Main
                 Directory.CreateDirectory(path);
             }
             photo.SaveAs(new_path);
-            destination destination = new destination();
-            destination.photo = "~/ Uploads";
+            destination.photo = "~/Uploads";
             destination.photo_name = filename;
-            db.destinations.Add(destination);
-            db.SaveChanges();
-
-            return RedirectToAction("index");
-        }
-
-        
-
-        public ActionResult create()
-        {
-
-            return View();
-        }
-        public ActionResult Savedata(destination destination)
-        {
             db.destinations.Add(destination);
             db.SaveChanges();
             return RedirectToAction("index");

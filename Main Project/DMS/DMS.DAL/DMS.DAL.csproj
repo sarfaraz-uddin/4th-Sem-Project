@@ -141,6 +141,12 @@
     <Compile Include="DatabaseContext\emp01employee.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseContext\employee_data.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseContext\gallery.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext\lvl01employee_levels.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
     <Compile Include="DatabaseContext\MetaData\EmployeeMD.cs" />
     <Compile Include="DatabaseContext\PartialClasses.cs" />
+    <Compile Include="DatabaseContext\test.cs">
+      <DependentUpon>MainModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseContext\UserCode.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
