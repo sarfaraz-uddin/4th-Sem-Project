@@ -452,13 +452,13 @@
     <Content Include="Content\assets\css\_styles.css" />
     <Content Include="Content\assets\dm_img.jfif" />
     <Content Include="Content\assets\images\logo.png" />
-    <Content Include="Content\assets\images\nature.jpg" />
     <Content Include="Content\assets\images\sample\f1.jpg" />
     <Content Include="Content\assets\images\sample\f2.jpg" />
     <Content Include="Content\assets\images\sample\f3.jpg" />
     <Content Include="Content\assets\images\sample\m1.jpg" />
     <Content Include="Content\assets\images\sample\m2.jpg" />
     <Content Include="Content\assets\images\sample\m3.jpg" />
+    <Content Include="Content\assets\images\travel.jpg" />
     <Content Include="Content\assets\js\custom.min.js" />
     <Content Include="Content\assets\js\chart_thamel.js" />
     <Content Include="Content\assets\js\FaijanManualToaster.js" />

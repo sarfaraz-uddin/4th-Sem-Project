@@ -1,4 +1,5 @@
-﻿<style>
+﻿@*@model List<MainProject.Models.destination>*@
+<style>
     .btn{
         max-width:30vh;
         width:100%;
@@ -146,21 +147,24 @@
 <div class="trips-section">
     <div class="container">
         <h3 class="title">Beautiful Tours</h3>
-        <div class="col-xs-4 exce-grid1-mmstyle">
-            <img src="~/Content/TravelAndTours/images/australia.jpg" alt="">
-            <div class="grid-ec1">
-                <h3>Visit to australia with our good price and have a good weekend </h3>
-                <p>Visit sydney with us on one click</p>
-                <h4>
-                    <i class="fa fa-map-marker"></i>Sydney Australia
-                </h4>
-                <h4 class="w3l-name">
-                    <i class="fa fa-calendar"></i>5 Days 4 night
-                </h4><br />
-                <button class="btn">Book now</button>
-            </div>
-        </div>
-        <div class="col-xs-4 exce-grid1-mmstyle">
+        @*@foreach (var data in Model)
+        {
+            <div class="col-xs-4 exce-grid1-mmstyle">
+                <img src="@(data.photo != null ? Url.Content(data.photo) :"")" alt="">
+                <div class="grid-ec1">
+                    <h3>@(data.description) </h3>
+                    @*<p>Visit sydney with us on one click</p>*@
+                    @*<h4>
+                        <i class="fa fa-map-marker"></i>@(data.location)
+                    </h4>
+                    <h4 class="w3l-name">
+                        <i class="fa fa-calendar"></i>@(data.time)
+                    </h4><br />
+                    <button class="btn">Book now</button>
+                </div>
+            </div>*@
+        @*}*@
+        @*<div class="col-xs-4 exce-grid1-mmstyle">
             <img src="~/Content/TravelAndTours/images/turkey.jpg" alt="">
             <div class="grid-ec1">
                 <h3>Visit to turkce with our good price and have a good weekend</h3>
@@ -187,7 +191,7 @@
                 </h4><br />
                 <button class="btn">Book now</button>
             </div>
-        </div>
+        </div>*@
         <div class="clearfix"></div>
         <button class="btnn"><a href="@Url.Action("beautifultours","home")">Show More</a></button>
     </div>

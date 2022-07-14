@@ -42,5 +42,11 @@ namespace DMS.Controllers.Main
 
             return RedirectToAction("Index");
         }
+
+        public ActionResult Search(string name1)
+        {
+            var data1 = db.galleries.Where(x => x.destination_name == name1).ToList();
+            return View("gallery", data1);
+        }
     }
 }
