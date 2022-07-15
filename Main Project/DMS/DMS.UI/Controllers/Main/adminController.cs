@@ -6,7 +6,6 @@ using System.Web.Mvc;
 
 namespace DMS.Controllers
 {
-    [AllowAnonymous]
     public class adminController : Controller
     {
         // GET: admin

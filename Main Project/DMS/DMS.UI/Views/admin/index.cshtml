@@ -2,63 +2,32 @@
     Layout = "~/Views/Shared/adminlayout.cshtml";
 }
 
-
 <aside>
     <div id="sidebar" class="nav-collapse">
-        <!-- sidebar menu start-->
         <div class="leftside-navigation">
             <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="index.html">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-
-                
-                
                 <li class="sub-menu">
                     <a href="javascript:;">
                             <i class="fa fa-th"></i>
                             <span>Data Tables</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="@Url.Action("index","Adddestination")">Add record</a></li>
-                        <li><a href="responsive_table.html">Update record</a></li>
+                        <li><a href="@Url.Action("index","Adddestination")">Add Tour Records</a></li>
                     </ul>
                 </li>
-                
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-envelope"></i>
-                        <span>Mail </span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="mail.html">Inbox</a></li>
-                        <li><a href="mail_compose.html">Compose Mail</a></li>
-                    </ul>
-                </li>
-                
+
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-glass"></i>
                         <span>Gallery</span>
                     </a>
                     <ul class="sub">
-                        <li><a href="@Url.Action("Index","Gallery")">Gallery</a></li>
+                        <li><a href="@Url.Action("index","Gallery")">Gallery</a></li>
                     </ul>
-                </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
-                    </a>
                 </li>
             </ul>
         </div>
-        <!-- sidebar menu end-->
     </div>
-
 </aside>
 <!--sidebar end-->
 <!--main content start-->

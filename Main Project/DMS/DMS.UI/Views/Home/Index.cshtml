@@ -148,10 +148,10 @@
 <div class="trips-section">
     <div class="container">
         <h3 class="title">Beautiful Tours</h3>
-        @*@foreach (var data in Model)
+        @foreach (var data in Model)
         {
             <div class="col-xs-4 exce-grid1-mmstyle">
-                <img src="@(data.photo != null ? Url.Content(data.photo) :"")" alt="">
+                <img src="@(data.photo!= null?Url.Content(data.photo):"")">
                 <div class="grid-ec1">
                     <h3>@(data.description) </h3>
                     <p>Visit sydney with us on one click</p>
@@ -164,7 +164,7 @@
                     <button class="btn">Book now</button>
                 </div>
             </div>
-        }*@
+        }
         @*<div class="col-xs-4 exce-grid1-mmstyle">
             <img src="~/Content/TravelAndTours/images/turkey.jpg" alt="">
         <div class="col-xs-4 exce-grid1-mmstyle">

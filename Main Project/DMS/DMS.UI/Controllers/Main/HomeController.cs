@@ -40,7 +40,8 @@ namespace DMS.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            List<destination> data = db.destinations.ToList();
+            return View(data);
         }
 
         public ActionResult About()
