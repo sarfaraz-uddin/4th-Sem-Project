@@ -1,3 +1,4 @@
+@model List<DMS.DAL.DatabaseContext.destination>
 @*<style>
         .btn {
             max-width: 30vh;
@@ -148,23 +149,23 @@
     <div class="container">
         <h3 class="title">Beautiful Tours</h3>
 <<<<<<< HEAD
-        @*@foreach (var data in Model)
+        @foreach (var data in Model)
         {
             <div class="col-xs-4 exce-grid1-mmstyle">
                 <img src="@(data.photo != null ? Url.Content(data.photo) :"")" alt="">
                 <div class="grid-ec1">
                     <h3>@(data.description) </h3>
                     @*<p>Visit sydney with us on one click</p>*@
-                    @*<h4>
+                    <h4>
                         <i class="fa fa-map-marker"></i>@(data.location)
                     </h4>
                     <h4 class="w3l-name">
-                        <i class="fa fa-calendar"></i>@(data.time)
+                        <i class="fa fa-calendar"></i>@(data.dtime)
                     </h4><br />
                     <button class="btn">Book now</button>
                 </div>
-            </div>*@
-        @*}*@
+            </div>
+        }
         @*<div class="col-xs-4 exce-grid1-mmstyle">
             <img src="~/Content/TravelAndTours/images/turkey.jpg" alt="">
 =======
