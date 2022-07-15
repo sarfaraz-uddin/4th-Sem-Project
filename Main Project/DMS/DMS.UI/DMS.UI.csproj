@@ -1085,9 +1085,11 @@
     <Content Include="Content\TravelAndTours\images\1.jpg" />
     <Content Include="Content\TravelAndTours\images\2.jpg" />
     <Content Include="Content\TravelAndTours\images\3.jpg" />
-    <Content Include="Content\TravelAndTours\images\ab.jpg" />
-    <Content Include="Content\TravelAndTours\images\ab1.jpg" />
-    <Content Include="Content\TravelAndTours\images\bg1.jpg" />
+    <Content Include="Content\TravelAndTours\images\a.jpg" />
+    <Content Include="Content\TravelAndTours\images\a1.jpg" />
+    <Content Include="Content\TravelAndTours\images\australia.jpg" />
+    <Content Include="Content\TravelAndTours\images\bg.jpg" />
+    <Content Include="Content\TravelAndTours\images\dubai.jpg" />
     <Content Include="Content\TravelAndTours\images\g1.jpg" />
     <Content Include="Content\TravelAndTours\images\g2.jpg" />
     <Content Include="Content\TravelAndTours\images\g3.jpg" />
@@ -1100,6 +1102,7 @@
     <Content Include="Content\TravelAndTours\images\k1.jpg" />
     <Content Include="Content\TravelAndTours\images\k2.jpg" />
     <Content Include="Content\TravelAndTours\images\k3.jpg" />
+    <Content Include="Content\TravelAndTours\images\paris.jpg" />
     <Content Include="Content\TravelAndTours\images\t1.jpg" />
     <Content Include="Content\TravelAndTours\images\t2.jpg" />
     <Content Include="Content\TravelAndTours\images\t3.jpg" />
@@ -1485,8 +1488,6 @@
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\SystemUsers\RegisterUserEmployee.cshtml" />
     <Content Include="Views\Home\gallery.cshtml" />
-    <Content Include="Views\Home\icons.cshtml" />
-    <Content Include="Views\Home\typography.cshtml" />
     <Content Include="Views\Shared\adminlayout.cshtml" />
     <Content Include="Views\admin\index.cshtml" />
     <Content Include="Views\Adddestination\index.cshtml" />
