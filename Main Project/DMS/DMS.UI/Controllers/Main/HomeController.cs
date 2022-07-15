@@ -20,10 +20,9 @@ namespace DMS.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        private MainEntities db;
+        public MainEntities db;
         private SystemInfoForSession _ActiveSession;
         private IBranchesRepo _BranchesRepo;
-
         public HomeController(MainEntities _db, IBranchesRepo BranchesRepo)
         {
             _ActiveSession = SessionHelper.GetSession();
@@ -40,7 +39,10 @@ namespace DMS.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            List<destination> data = db.destinations.ToList();
+       
+           
+            return View(data);
         }
 
         public ActionResult About()
